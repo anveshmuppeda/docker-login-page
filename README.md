@@ -6,6 +6,8 @@ Docker Login Page
   <tr>
     <td align="center"><a href="https://anveshmuppeda.github.io/profile/"><img src="https://avatars.githubusercontent.com/u/115966808?v=4" width="100px;" alt=""/><br /><sub><b>Anvesh Muppeda</b></sub></a></td>
     <td align="center"><a href="https://github.com/saimanasak"><img src="https://avatars.githubusercontent.com/u/47205414?v=4" width="100px;" alt=""/><br /><sub><b>Sai Manasa Kota</b></sub></a></td>
-    <td align="center"><a href="https://github.com/khajjayamteja"><img src="https://avatars.githubusercontent.com/u/151116058?v=4" width="100px;" alt=""/><br /><sub><b>Sai Manasa Kota</b></sub></a></td>
+    <td align="center"><a href="https://github.com/khajjayamteja"><img src="https://avatars.githubusercontent.com/u/151116058?v=4" width="100px;" alt=""/><br /><sub><b>Teja Sai Srinivas</b></sub></a></td>
+    <td align="center"><a href="https://github.com/sakethvardhineni"><img src="https://avatars.githubusercontent.com/u/132186396?v=4" width="100px;" alt=""/><br /><sub><b>Saketh Rao Vardhineni</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Vishwasena-Raidu-Nyaramneni"><img src="https://avatars.githubusercontent.com/u/120606838?v=4" width="100px;" alt=""/><br /><sub><b>Vishwasena Raidu Nyaramneni</b></sub></a></td>
   </tr>
 </table>  
