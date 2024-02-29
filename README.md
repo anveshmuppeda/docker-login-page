@@ -1,4 +1,4 @@
-# docker-login-page [![GitHub](https://img.shields.io/github/license/anveshmuppeda/docker-login-page?color=blue)](https://github.com/anveshmuppeda/docker-login-page/blob/main/LICENSE)
+# Docker Login Page [![GitHub](https://img.shields.io/github/license/anveshmuppeda/docker-login-page?color=blue)](https://github.com/anveshmuppeda/docker-login-page/blob/main/LICENSE)
 
 Greetings everyone,
 
@@ -28,7 +28,6 @@ Thank you for being part of this exciting journey.
 
 Your contributions, suggestions, and assistance are invaluable in enhancing and refining our project. Please feel free to share your insights and help us build a stronger foundation for this project.
 
-Docker Login Page  
 ## Project Maintainers & Contributors  
 <table>
   <tr>
