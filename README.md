@@ -26,6 +26,7 @@ With this comprehensive toolset and meticulous approach to development and deplo
 
 Thank you for being part of this exciting journey.
 
+Your contributions, suggestions, and assistance are invaluable in enhancing and refining our project. Please feel free to share your insights and help us build a stronger foundation for this project.
 
 Docker Login Page  
 ## Project Maintainers & Contributors  
