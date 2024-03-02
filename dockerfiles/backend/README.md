@@ -10,7 +10,7 @@
     - **COPY ./backend/init.sql /docker-entrypoint-initdb.d/** : Copies the init.sql file from the local ./backend/ directory into the /docker-entrypoint-initdb.d/ directory within the Docker image. Files placed in this directory are executed by MySQL when the container is first started.
 
 ### Building an Image from Dockerfile:  
-- Command to build a DOcker image:  
+- Command to build a Docker image:  
     `docker build -t <image-name> .`  
 - Command to build a Docker image from a custom dockerfile name:  
     `docker build -t <image-name> -f <Dockerfile-name> .`  
@@ -26,5 +26,5 @@
         `docker push <registry_URL>/<repository_name>:<tag>`
 
 ### Use of init.sql file:  
-- contains SQL commands to initialize the MySQL database with required tables when the Docker container starts.
+- Contains SQL commands to initialize the MySQL database with required tables when the Docker container starts.
     
