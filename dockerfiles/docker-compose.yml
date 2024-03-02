@@ -4,7 +4,7 @@ services:
   db:
     build:
       context: .
-      dockerfile: mysql.Dockerfile
+      dockerfile: ./backend/mysql.Dockerfile
     ports:
       - "3306:3306"
     environment:
@@ -15,20 +15,20 @@ services:
     networks:
       - my_network
     volumes:
-      - /var/lib/docker/volumes/mysql_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
     restart: always
 
   php:
     build:
       context: .
-      dockerfile: php.Dockerfile   
+      dockerfile: ./frontend/php.Dockerfile   
     networks:
       - my_network
     ports:
       - "93:80"
     volumes:
-      - ./default:/etc/php/sites-available/default
-      - ./src:/var/www/html
+      - ./frontend/default:/etc/php/sites-available/default
+      - ./frontend/src:/var/www/html
     depends_on:
       - db
     restart: always
@@ -36,5 +36,6 @@ services:
 networks:
   my_network:
     driver: bridge
+
 volumes:
   db_data:
