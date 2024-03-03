@@ -9,16 +9,14 @@ This repository contains the following PHP pages located in the `src` folder:
 - [signup1.php](src/signup1.php)
 - [styles.css](src/styles.css)
 
-## File Structure
+## Web Application File Structure and Functionality Overview
 
-- `index.php`: 
+- `home.php`:Upon successful login, users will be redirected to this page.
+- `index.php`:This page prompts users for login credentials, and provides a signup link for new users.
+- `index1.php`:This script handles actions such as connecting to MySQL and verifying login credentials.
 - `styles.css`: Stylesheet for defining the look and feel of the pages.
-- `signup.php`: 
-
-
-
-
-
+- `signup.php`:Clicking on the signup link in the index page will redirect users to this page.
+- `signup1.php`: This script manages actions like connecting to MySQL and inserting new credentials.
 
 ### Creating a Dockerfile:  
 - A Dockerfile is a text document that contains all the commands a user can call on the command line to assemble an image.  
