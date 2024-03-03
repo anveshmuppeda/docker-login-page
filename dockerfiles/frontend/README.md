@@ -9,7 +9,11 @@ This repository contains the following PHP pages located in the `src` folder:
 - [signup1.php](src/signup1.php)
 - [styles.css](src/styles.css)
 
+## File Structure
 
+- `index.php`: 
+- `styles.css`: Stylesheet for defining the look and feel of the pages.
+- `signup.php`: 
 
 
 
