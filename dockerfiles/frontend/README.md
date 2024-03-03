@@ -1,3 +1,21 @@
+# PHP Pages
+
+This repository contains the following PHP pages located in the `src` folder:
+
+- [home.php](src/home.php)
+- [index.php](src/index.php)
+- [index1.php](src/index1.php)
+- [signup.php](src/signup.php)
+- [signup1.php](src/signup1.php)
+- [styles.css](src/styles.css)
+
+
+
+
+
+
+
+
 ### Creating a Dockerfile:  
 - A Dockerfile is a text document that contains all the commands a user can call on the command line to assemble an image.  
 - We have created a Dockerfile for frontend.  
