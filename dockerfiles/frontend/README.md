@@ -1,11 +1,11 @@
-# PHP Pages
+# Application Code
 
 This repository contains the following PHP pages located in the `src` folder:
 
 - [home.php](src/home.php)
 - [index.php](src/index.php)
 - [index1.php](src/index1.php)
-- [signup.php](src/signup.php)
+- [signup.php](src/signup.php)*
 - [signup1.php](src/signup1.php)
 - [styles.css](src/styles.css)
 
