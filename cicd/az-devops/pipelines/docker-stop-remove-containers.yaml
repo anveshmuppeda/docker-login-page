@@ -1,19 +1,31 @@
 trigger:
 - none
 
+# agent pool details: name --> name of the agent pool, vmImage --> Image ID of VM
 pool:
   name: digitalocean-manasa
   vmImage: docker-server
 
+# a task that should be executed
+# task declaration
 steps:
 - task: Bash@3
   displayName: 'Stopping and Removing Docker Containers'
   inputs:
+    # specifies that the script is written directly within the YAML file
     targetType: 'inline'
     script: |
+
+      # prints a message
       echo "Stopping and Removing Containers"
+      
+      # list all the containers both running and stopped
       docker ps -a
+
+      # assigned all the containers related to the frontend based on the label
       frontend_containers=$(docker ps -q --filter "label=myapp=frontend")
+
+      # checks for their respective containers; stops and removes them
       if [ -n "$frontend_containers" ]; then
         sudo docker stop $frontend_containers
         sudo docker rm $frontend_containers
@@ -21,7 +33,11 @@ steps:
       else
         echo "No Frontend Containers found."
       fi
+
+      # assigned all the containers related to the backend based on the label
       backend_containers=$(docker ps -q --filter "label=myapp=backend")
+
+      # checks for their respective containers; stops and removes them
       if [ -n "$backend_containers" ]; then
         sudo docker stop $backend_containers
         sudo docker rm $backend_containers
@@ -29,4 +45,6 @@ steps:
       else
         echo "No Backend Containers found."
       fi
+
+      # prints a success message
       echo "Script Execution Completed"

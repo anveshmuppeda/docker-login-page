@@ -1,20 +1,34 @@
 trigger:
 - none
 
+# agent pool details: name --> name of the agent pool, vmImage --> Image ID of VM
 pool:
   name: digitalocean-manasa
   vmImage: docker-server
 
+# a task that should be executed
+# task declaration
 steps:
 - task: Bash@3
   displayName: 'Building and Starting Docker Containers'
   inputs:
+    # specifies that the script is written directly within the YAML file
     targetType: 'inline'
     script: |
+
+      # Prints a message
       echo "Building and Starting Docker containers with docker-compose"
+
+      #lists the files present in the directory
       ls
+
+      # builds images and creates the containers from the docker-compose.yaml file
       sudo docker-compose -f "$(Build.SourcesDirectory)/dockerfiles/docker-compose.yml" up -d --build
+      
+      # adding tags to the images
       sudo docker tag dockerfiles_php:latest saimanasak/docker-login-page:frontend-v1
       sudo docker tag dockerfiles_db:latest saimanasak/docker-login-page:backend-v1
+
+      # pushing the images to the docker hub repo 
       sudo docker push saimanasak/docker-login-page:frontend-v1
       sudo docker push saimanasak/docker-login-page:backend-v1
