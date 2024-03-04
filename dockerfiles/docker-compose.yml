@@ -17,6 +17,8 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     restart: always
+    labels:
+      - "myapp=frontend"
 
   php:
     build:
@@ -32,6 +34,8 @@ services:
     depends_on:
       - db
     restart: always
+    labels:
+      - "myapp=backend"
      
 networks:
   my_network:
