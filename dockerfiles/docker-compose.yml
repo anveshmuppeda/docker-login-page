@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: ./backend/mysql.Dockerfile
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: database
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+    networks:
+      - my_network
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    labels:
+      - "myapp=frontend"
+
+  php:
+    build:
+      context: .
+      dockerfile: ./frontend/php.Dockerfile   
+    networks:
+      - my_network
+    ports:
+      - "93:80"
+    volumes:
+      - ./frontend/default:/etc/php/sites-available/default
+      - ./frontend/src:/var/www/html
+    depends_on:
+      - db
+    restart: always
+    labels:
+      - "myapp=backend"
+     
+networks:
+  my_network:
+    driver: bridge
+
+volumes:
+  db_data:
