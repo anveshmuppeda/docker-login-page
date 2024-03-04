@@ -1,0 +1,32 @@
+trigger:
+- none
+
+pool:
+  name: digitalocean-manasa
+  vmImage: docker-server
+
+steps:
+- task: Bash@3
+  displayName: 'Stopping and Removing Docker Containers'
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "Stopping and Removing Containers"
+      docker ps -a
+      frontend_containers=$(docker ps -q --filter "label=myapp=frontend")
+      if [ -n "$frontend_containers" ]; then
+        sudo docker stop $frontend_containers
+        sudo docker rm $frontend_containers
+        echo "Frontend Containers Removed Successfully"
+      else
+        echo "No Frontend Containers found."
+      fi
+      backend_containers=$(docker ps -q --filter "label=myapp=backend")
+      if [ -n "$backend_containers" ]; then
+        sudo docker stop $backend_containers
+        sudo docker rm $backend_containers
+        echo "Backend Containers Removed Successfully"
+      else
+        echo "No Backend Containers found."
+      fi
+      echo "Script Execution Completed"
