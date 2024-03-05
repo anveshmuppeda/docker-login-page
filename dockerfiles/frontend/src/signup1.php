@@ -1,6 +1,8 @@
 <?php
 // Database configuration
-$servername = "165.232.144.187";
+// $servername = "165.232.144.187";
+
+$servername = $_SERVER['SERVER_ADDR'];
 $username = "username";
 $password = "password";
 $database =  "database";
