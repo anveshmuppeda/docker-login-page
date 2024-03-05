@@ -13,8 +13,8 @@ steps:
     script: |
       echo "Building and Starting Docker containers with docker-compose"
       ls
-      sudo docker-compose -f "$(Build.SourcesDirectory)/dockerfiles/docker-compose.yml" up -d --build
-      sudo docker tag dockerfiles_php:latest saimanasak/docker-login-page:frontend-v1
-      sudo docker tag dockerfiles_db:latest saimanasak/docker-login-page:backend-v1
-      sudo docker push saimanasak/docker-login-page:frontend-v1
-      sudo docker push saimanasak/docker-login-page:backend-v1
+      docker-compose -f "$(Build.SourcesDirectory)/dockerfiles/docker-compose.yml" up -d --build
+      docker tag dockerfiles_php:latest saimanasak/docker-login-page:frontend-v1
+      docker tag dockerfiles_db:latest saimanasak/docker-login-page:backend-v1
+      docker push saimanasak/docker-login-page:frontend-v1
+      docker push saimanasak/docker-login-page:backend-v1
