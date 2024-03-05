@@ -21,6 +21,7 @@ steps:
 
       #lists the files present in the directory
       ls
+<<<<<<< HEAD
 
       # builds images and creates the containers from the docker-compose.yaml file
       sudo docker-compose -f "$(Build.SourcesDirectory)/dockerfiles/docker-compose.yml" up -d --build
@@ -32,3 +33,10 @@ steps:
       # pushing the images to the docker hub repo 
       sudo docker push saimanasak/docker-login-page:frontend-v1
       sudo docker push saimanasak/docker-login-page:backend-v1
+=======
+      docker-compose -f "$(Build.SourcesDirectory)/dockerfiles/docker-compose.yml" up -d --build
+      docker tag dockerfiles_php:latest saimanasak/docker-login-page:frontend-v1
+      docker tag dockerfiles_db:latest saimanasak/docker-login-page:backend-v1
+      docker push saimanasak/docker-login-page:frontend-v1
+      docker push saimanasak/docker-login-page:backend-v1
+>>>>>>> d16d863fe3a73cee09dfb241ae7d320c53c1e875
