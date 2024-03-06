@@ -59,3 +59,13 @@ body {
 .form-container .message a:hover {
     text-decoration: underline;
 }
+
+footer {
+    position: absolute; /* Add this */
+    bottom: 0; /* Add this */
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+

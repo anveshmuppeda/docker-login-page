@@ -19,6 +19,19 @@
     </div>
 </div>
 
+<footer>
+    <div class="footer-container">
+       
+        <div class="copyright">
+            <p>&copy; Team Alpha. All rights reserved.</p>
+        </div>
+        <div class="source-code">
+            <p>Source Code available on <a href="https://github.com/anveshmuppeda/docker-login-page" target="_blank" style="color: red;">GitHub</a></p>
+        </div>
+       
+    </div>
+</footer>
+
 
 </body>
 </html>

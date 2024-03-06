@@ -1,0 +1,42 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: sqldb
+  labels:
+    app: webapp-sql
+    tier: backend
+spec:
+  selector:
+    matchLabels:
+      app: webapp-sql
+      tier: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: webapp-sql
+        tier: backend
+    spec:
+      containers:
+      - image: anvesh35/docker-login-backend:mysql
+        name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: pass
+        - name: MYSQL_DATABASE
+          value: database
+        - name: MYSQL_USER
+          value: username
+        - name: MYSQL_PASSWORD
+          value: password
+        args: ["--default-authentication-plugin=mysql_native_password"]
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: db-pvc
