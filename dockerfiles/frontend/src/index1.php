@@ -1,14 +1,11 @@
 <?php
 // Database configuration
-//$servername = "165.232.144.187";
 
-$servername = $_SERVER['SERVER_ADDR'];
-$username = "username";
-$password = "password";
-$database = "database";
+//$servername = $_SERVER['SERVER_ADDR'];
+$servername = $_ENV['MYSQL_ROOT_HOST'];
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $_ENV['MYSQL_USER'], $_ENV['MYSQL_PASSWORD'], $_ENV['MYSQL_DATABASE']);
 
 // Check connection
 if ($conn->connect_error) {
