@@ -10,7 +10,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /tmp/anvesh
+    path: /home/anvesh
   nodeAffinity:
     required:
       nodeSelectorTerms:
