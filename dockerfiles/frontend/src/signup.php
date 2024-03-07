@@ -10,7 +10,7 @@
 
 <div class="container">
     <div class="form-container">
-        <form id="signupForm" class="signup-form" action="signup1.php" method="POST" >    
+        <form id="signupForm" class="signup-form" action="signup-logic.php" method="POST" >    
 	    <h2>Sign Up</h2>
             <input type="text" id="signupUsername"  name =" signupUsername" placeholder="Username" required autocomplete="off">
             <input type="password" id="signupPassword"name ="signupPassword" placeholder="Password" required>
