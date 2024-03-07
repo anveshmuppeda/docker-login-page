@@ -74,9 +74,17 @@
        - **hostPID** enables the use of the host's PID namespace.  
        - **restartPolicy** specifies the pod's restart policy. Here, it is set to "Never," which means the pod won't be restarted automatically if it exits.  
 - After creating the definition file for a pod, apply the changes using the command:  
-    `kubectl apply -f <file-name>`
-    `kubectl apply -f ssh-worker.yaml`  
+    ```
+    kubectl apply -f <file-name>
+    ```
+    ```
+    kubectl apply -f ssh-worker.yaml
+    ```
 - Once the pod is created, we can log in using:  
-    `kubectl exec -it <pod-name> sh`
-    `kubectl exec -it ssh-node sh`      
+    ```
+    kubectl exec -it <pod-name> sh
+    ```
+    ```
+    kubectl exec -it ssh-node sh
+    ```      
 - Finally, you are logged in...!  
