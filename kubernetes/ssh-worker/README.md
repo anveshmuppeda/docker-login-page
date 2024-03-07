@@ -1,10 +1,10 @@
-#### Logging into Worker node:  
+### Logging into Worker node:  
 - There are two ways to access the worker node:  
     - SSH using key.  
     - Using a pod.  
 
 ### 1. SSH Key:  
-- As we deployed our application in **DigitalOcean**, it doesn't allow SSH access to the worker nodes.  
+- As we intentionally disabled the SSH access (due to security reasons), we cannot access using SSH.    
 
 ### 2. Using a Pod:  
 - Let's create a pod definition file.  
@@ -73,5 +73,10 @@
        - **hostIPC** enables the use of the host's IPC namespace.  
        - **hostPID** enables the use of the host's PID namespace.  
        - **restartPolicy** specifies the pod's restart policy. Here, it is set to "Never," which means the pod won't be restarted automatically if it exits.  
-    
-
+- After creating the definition file for a pod, apply the changes using the command:  
+    `kubectl apply -f <file-name>`
+    `kubectl apply -f ssh-worker.yaml`  
+- Once the pod is created, we can log in using:  
+    `kubectl exec -it <pod-name> sh`
+    `kubectl exec -it ssh-node sh`      
+- Finally, you are logged in...!  
