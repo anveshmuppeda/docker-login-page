@@ -23,13 +23,25 @@ spec:
         image: anvesh35/docker-login-frontend:phpv2
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: pass
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysq_root_pass
         - name: MYSQL_DATABASE
-          value: database
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysq_database
         - name: MYSQL_USER
-          value: username
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysq_user
         - name: MYSQL_PASSWORD
-          value: password
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysq_password
         - name: MYSQL_ROOT_HOST
           value: mysql-svc
         imagePullPolicy: Always
