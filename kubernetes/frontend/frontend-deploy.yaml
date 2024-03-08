@@ -26,22 +26,22 @@ spec:
           valueFrom:
             secretKeyRef:
               name: database-secret
-              key: mysq_root_pass
+              key: mysql_root_pass
         - name: MYSQL_DATABASE
           valueFrom:
             secretKeyRef:
               name: database-secret
-              key: mysq_database
+              key: mysql_database
         - name: MYSQL_USER
           valueFrom:
             secretKeyRef:
               name: database-secret
-              key: mysq_user
+              key: mysql_user
         - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
               name: database-secret
-              key: mysq_password
+              key: mysql_password
         - name: MYSQL_ROOT_HOST
           value: mysql-svc
         imagePullPolicy: Always
