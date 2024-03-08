@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: team-alpha
   labels:
     app: webapp-sql
     tier: frontend
