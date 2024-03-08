@@ -3,7 +3,7 @@
 session_start();
 if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
     // User is not authenticated, redirect to login page
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 

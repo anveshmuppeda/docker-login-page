@@ -1,7 +1,8 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: sqldb
+  name: backend
+  namespace: team-alpha
   labels:
     app: webapp-sql
     tier: backend
@@ -19,17 +20,29 @@ spec:
         tier: backend
     spec:
       containers:
-      - image: anvesh35/docker-login-backend:mysql
+      - image: anvesh35/docker-login-backend:mysqlv2
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: pass
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysql_root_pass
         - name: MYSQL_DATABASE
-          value: database
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysql_database
         - name: MYSQL_USER
-          value: username
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysql_user
         - name: MYSQL_PASSWORD
-          value: password
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysql_password
         args: ["--default-authentication-plugin=mysql_native_password"]
         ports:
         - containerPort: 3306

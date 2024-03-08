@@ -60,6 +60,7 @@ body {
     text-decoration: underline;
 }
 
+
 footer {
     position: absolute; /* Add this */
     bottom: 0; /* Add this */
@@ -68,4 +69,5 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
 

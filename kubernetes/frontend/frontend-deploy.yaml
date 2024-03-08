@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp1
+  name: frontend
+  namespace: team-alpha
   labels:
     app: webapp-sql
     tier: frontend
@@ -19,7 +20,30 @@ spec:
     spec:
       containers:
       - name: webapp1
-        image: anvesh35/docker-login-frontend:php
+        image: anvesh35/docker-login-frontend:phpv2
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysql_root_pass
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysql_database
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysql_user
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: mysql_password
+        - name: MYSQL_ROOT_HOST
+          value: mysql-svc
         imagePullPolicy: Always
         ports:
         - containerPort: 80
