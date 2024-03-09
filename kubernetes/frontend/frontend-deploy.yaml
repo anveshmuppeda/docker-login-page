@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: webapp1
-        image: anvesh35/docker-login-frontend:phpv2
+        image: dockerloginpage/frontend:v1.0.0
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
