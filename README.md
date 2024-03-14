@@ -5,7 +5,9 @@ To orchestrate these containers effectively, Docker Compose was employed, facili
 In terms of version control and collaboration, we’ve adopted Git and GitHub as our source control management platform. Following established branching strategies, including development, pre-production, production, and main branches, ensures streamlined development workflows and efficient collaboration among team members.  
 
 ## Prerequisites  
-Only Docker 🌐  
+1. Docker 🌐  
+2. Kubernetes ⎈  
+3. Azure DevOps 
 
 
 ## Table of Contents  
