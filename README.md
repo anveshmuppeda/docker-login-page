@@ -1,33 +1,39 @@
 # Docker Login Page [![GitHub](https://img.shields.io/github/license/anveshmuppeda/docker-login-page?color=blue)](https://github.com/anveshmuppeda/docker-login-page/blob/main/LICENSE)
 
-Greetings everyone,
+**Docker Login Page** project entails building a real-time docker based web application featuring login and signup functionalities, crafted using docker, git, PHP, HTML, CSS, and SQL. To ensure seamless deployment and scalability, we’ve leveraged Docker technology to containerize the application. This involved creating distinct images for the frontend and backend components.  
+To orchestrate these containers effectively, Docker Compose was employed, facilitating their build and runtime configurations. Networking capabilities within Docker were utilized to establish communication between the frontend and backend containers, enabling full-stack functionality. Additionally, we implemented volume management to facilitate regular backups of the SQL tabular database, ensuring data integrity and resilience.  
+In terms of version control and collaboration, we’ve adopted Git and GitHub as our source control management platform. Following established branching strategies, including development, pre-production, production, and main branches, ensures streamlined development workflows and efficient collaboration among team members.  
 
-We're thrilled to announce the initiation of our latest venture: a comprehensive DevOps project from the ground up. Our primary objective is to develop a streamlined login and signup system utilizing fundamental web technologies such as HTML, CSS, and MySQL. To ensure scalability, efficiency, and consistency in deployment, we're employing Docker containers to host our applications.
-
-The project workflow involves the creation of distinct Docker images tailored to different components of our application, notably frontend and backend. Once these Docker images are meticulously crafted, we seamlessly orchestrate the deployment process through Azure DevOps, leveraging the power of Continuous Integration and Continuous Deployment (CI/CD) pipelines.
-
-Our deployment strategy extends beyond conventional approaches as we opt for self-managed Kubernetes environments. Kubernetes offers unparalleled flexibility and scalability, allowing us to deploy and manage our containerized applications effortlessly. To further streamline our Kubernetes deployments, we're harnessing the capabilities of Helm charts, facilitating efficient packaging and deployment of Kubernetes applications.
-
-Moreover, automation plays a pivotal role in our Kubernetes environment, enhancing reliability and reducing manual intervention. By incorporating automation scripts and workflows, we aim to optimize resource utilization and ensure consistent deployment practices across our infrastructure.
-
-In line with industry best practices, we're meticulously adhering to proper branching strategies, ensuring a robust and reliable deployment process. Our Git repositories, including GitHub, serve as the cornerstone of collaborative development, enabling seamless version control and collaboration among team members.
-
-In summary, our technology stack encompasses a diverse array of tools and platforms:
-
-HTML and CSS for frontend development
-MySQL for database management
-Docker for containerization
-Cloud infrastructure for scalability and flexibility
-Kubernetes for container orchestration
-Helm for streamlined Kubernetes deployments
-Azure DevOps for CI/CD automation
-Git and GitHub for version control and collaboration
-With this comprehensive toolset and meticulous approach to development and deployment, we're confident in delivering a robust, scalable, and efficient login and signup system that meets the evolving needs of our users.
-
-Thank you for being part of this exciting journey.
+## Prerequisites  
+Only Docker 🌐  
 
 
-Your contributions, suggestions, and assistance are invaluable in enhancing and refining our project. Please feel free to share your insights and help us build a stronger foundation for this project.
+## Table of Contents  
+1. Technologies Used  
+2. Dockerize   
+3. Releases  
+4. Project Maintainers & Contributors  
+
+## Technologies Used  
+1. Docker  
+2. PHP  
+3. HTML  
+4. CSS  
+5. MySQL  
+6. Git  
+7. Cloud  
+8. Kubernetes  
+9. Helm  
+
+## Dockerizing  
+We’ve meticulously Dockerized the application, creating dedicated Dockerfiles for frontend and backend components. A unified docker-compose.yml orchestrates seamless deployment, leveraging Docker Compose for efficient container management. Network configurations and volume management ensure robust connectivity and data integrity.  
+
+## Releases  
+Stay updated with our project milestones and releases on GitHub:  
+Manual Deployment: Release Manual Deployment  
+Version 1.0.1: Release v1.0.1  
+
+Your contributions, suggestions, and assistance are invaluable in enhancing and refining our project. Please feel free to share your insights and help us build a stronger foundation for this project.  
 
 ## Project Maintainers & Contributors  
 <table>
