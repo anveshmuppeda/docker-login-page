@@ -4,8 +4,13 @@
 To orchestrate these containers effectively, Docker Compose was employed, facilitating their build and runtime configurations. Networking capabilities within Docker were utilized to establish communication between the frontend and backend containers, enabling full-stack functionality. Additionally, we implemented volume management to facilitate regular backups of the SQL tabular database, ensuring data integrity and resilience.  
 In terms of version control and collaboration, we’ve adopted Git and GitHub as our source control management platform. Following established branching strategies, including development, pre-production, production, and main branches, ensures streamlined development workflows and efficient collaboration among team members.  
 
+## Architecture  
+![Docker Login Page Architecture](./architecture/docker-login-page-arch.png)
+
 ## Prerequisites  
-Only Docker 🌐  
+1. Docker 🌐  
+2. Kubernetes ⎈  
+3. Azure DevOps 
 
 
 ## Table of Contents  
