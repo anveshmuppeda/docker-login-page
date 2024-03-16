@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Values.sshWorker.name }}
+  labels:
+    plugin: ssh-node
+spec:
+  nodeName: pool-448noeajl-o5sgi
+  containers:
+  - name: ssh-node
+    image: {{ .Values.sshWorker.image }}
+    imagePullPolicy: {{ .Values.sshWorker.imagePullPolicy }}
+    command: {{ .Values.sshWorker.command }}
+    tty: {{ .Values.sshWorker.tty }}
+    stdin: {{ .Values.sshWorker.stdin }}
+    stdinOnce: {{ .Values.sshWorker.stdinOnce }}
+    securityContext:
+      privileged: {{ .Values.sshWorker.privileged }}
+    volumeMounts:
+    - name: host
+      mountPath: {{ .Values.sshWorker.hostPath }}
+  volumes:
+  - name: host
+    hostPath:
+      path: {{ .Values.sshWorker.hostPath }}
+  hostNetwork: {{ .Values.sshWorker.hostNetwork }}
+  hostIPC: {{ .Values.sshWorker.hostIPC }}
+  hostPID: {{ .Values.sshWorker.hostPID }}
+  restartPolicy: {{ .Values.sshWorker.restartPolicy }}
