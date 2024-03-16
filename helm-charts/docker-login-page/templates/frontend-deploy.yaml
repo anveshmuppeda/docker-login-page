@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: docker-login-page
   name: {{ .Release.Name }}-{{ .Values.frontend.name }}
   labels:
     app: {{ .Values.frontend.app }}

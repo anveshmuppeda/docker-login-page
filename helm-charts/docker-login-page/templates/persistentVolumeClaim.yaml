@@ -1,6 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
+  namespace: docker-login-page
   name: {{ .Values.persistentVolumeClaim.name }}
 spec:
   accessModes:
