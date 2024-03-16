@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: docker-login-page
+  name: {{ .Release.Name }}-{{ .Values.frontend.name }}
+spec:
+  selector:
+    app: {{ .Values.frontend.app }}
+    tier: {{ .Values.frontend.tier }}
+  ports:
+  - protocol: "TCP"
+    port: {{ .Values.frontendService.port }}
+    targetPort: {{ .Values.frontendService.port }}
+  type: {{ .Values.frontendService.type }}

@@ -1,0 +1,74 @@
+backend:
+  name: sqldb
+  app: webapp-sql
+  tier: backend
+  image: dockerloginpage/backend:v1.0.0
+  replicas: 1
+  env:
+    MYSQL_ROOT_PASSWORD: pass
+    MYSQL_DATABASE: database
+    MYSQL_USER: username
+    MYSQL_PASSWORD: password
+  args: ["--default-authentication-plugin=mysql_native_password"]
+  containerPort: 3306
+  volumeClaim: db-pvc
+  volumeMountPath: /var/lib/mysql
+
+frontend:
+  name: webapp1
+  app: webapp-sql
+  tier: frontend
+  image: dockerloginpage/frontend:v1.0.0
+  replicas: 1
+  containerPort: 80
+  imagePullPolicy: Always
+
+backendService:
+  port: 3306
+  clusterIP: None
+
+frontendService:
+  port: 80
+  type: NodePort
+
+secrets:
+  mysqlRootPassword: cGFzcw==
+  mysqlDatabase: ZGF0YWJhc2U=
+  mysqlUser: dXNlcm5hbWU=
+  mysqlPassword: cGFzc3dvcmQ=
+
+sshWorker:
+  name: ssh-node
+  image: busybox
+  imagePullPolicy: IfNotPresent
+  command: ["chroot", "/host"]
+  tty: true
+  stdin: true
+  stdinOnce: true
+  privileged: true
+  hostPath: "/"
+  hostNetwork: true
+  hostIPC: true
+  hostPID: true
+  restartPolicy: Never
+
+persistentVolume:
+  name: sql-db
+  capacity: 1Gi
+  accessModes: ReadWriteOnce
+  reclaimPolicy: Retain
+  storageClassName: local-storage
+  path: /home/anvesh
+  nodeName: pool-448noeajl-o5sgi
+
+persistentVolumeClaim:
+  name: db-pvc
+  accessModes: ReadWriteOnce
+  storageClassName: local-storage
+  storage: 1Gi
+
+storageClass:
+  name: local-storage
+  provisioner: kubernetes.io/no-provisioner
+  reclaimPolicy: Retain
+  volumeBindingMode: WaitForFirstConsumer

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: docker-login-page
+  name: {{ .Release.Name }}-{{ .Values.frontend.name }}
+  labels:
+    app: {{ .Values.frontend.app }}
+    tier: {{ .Values.frontend.tier }}
+spec:
+  replicas: {{ .Values.frontend.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.frontend.app }}
+      tier: {{ .Values.frontend.tier }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.frontend.app }}
+        tier: {{ .Values.frontend.tier }}
+    spec:
+      containers:
+      - name: webapp1
+        image: {{ .Values.frontend.image }}
+        imagePullPolicy: {{ .Values.frontend.imagePullPolicy }}
+        ports:
+        - containerPort: {{ .Values.frontend.containerPort }}

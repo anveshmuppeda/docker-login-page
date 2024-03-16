@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  namespace: docker-login-page
+  name: {{ .Values.persistentVolumeClaim.name }}
+spec:
+  accessModes:
+  - {{ .Values.persistentVolumeClaim.accessModes }}
+  storageClassName: {{ .Values.persistentVolumeClaim.storageClassName }}
+  resources:
+    requests:
+      storage: {{ .Values.persistentVolumeClaim.storage }}

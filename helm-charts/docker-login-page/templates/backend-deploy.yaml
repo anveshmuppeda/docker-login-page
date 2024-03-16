@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: docker-login-page
+  name: {{ .Release.Name }}-{{ .Values.backend.name }}
+  labels:
+    app: {{ .Values.backend.app }}
+    tier: {{ .Values.backend.tier }}
+spec:
+  replicas: {{ .Values.backend.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.backend.app }}
+      tier: {{ .Values.backend.tier }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.backend.app }}
+        tier: {{ .Values.backend.tier }}
+    spec:
+      containers:
+      - name: mysql
+        image: {{ .Values.backend.image }}
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: {{ .Values.backend.env.MYSQL_ROOT_PASSWORD }}
+        - name: MYSQL_DATABASE
+          value: {{ .Values.backend.env.MYSQL_DATABASE }}
+        - name: MYSQL_USER
+          value: {{ .Values.backend.env.MYSQL_USER }}
+        - name: MYSQL_PASSWORD
+          value: {{ .Values.backend.env.MYSQL_PASSWORD }}
+        args: {{ .Values.backend.args }}
+        ports:
+        - containerPort: {{ .Values.backend.containerPort }}
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: {{ .Values.backend.volumeMountPath }}
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: {{ .Values.backend.volumeClaim }}
