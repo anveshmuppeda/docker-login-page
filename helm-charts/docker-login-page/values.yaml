@@ -2,7 +2,7 @@ backend:
   name: sqldb
   app: webapp-sql
   tier: backend
-  image: anvesh35/docker-login-backend:mysql
+  image: dockerloginpage/backend:v1.0.0
   replicas: 1
   env:
     MYSQL_ROOT_PASSWORD: pass
@@ -18,7 +18,7 @@ frontend:
   name: webapp1
   app: webapp-sql
   tier: frontend
-  image: anvesh35/docker-login-frontend:php
+  image: dockerloginpage/frontend:v1.0.0
   replicas: 1
   containerPort: 80
   imagePullPolicy: Always
@@ -72,11 +72,3 @@ storageClass:
   provisioner: kubernetes.io/no-provisioner
   reclaimPolicy: Retain
   volumeBindingMode: WaitForFirstConsumer
-
-prometheus:
-  enabled: true
-  serviceMonitor:
-    enabled: true
-
-grafana:
-  enabled: true
